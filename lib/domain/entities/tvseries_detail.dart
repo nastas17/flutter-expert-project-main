@@ -20,7 +20,7 @@ class TvDetail extends Equatable {
   double voteAverage;
   List<Genre> genres;
   List<Season> seasons;
-  List<dynamic> episodeRunTime;
+  List<int> episodeRunTime;
 
   TvDetail({
     required this.id,

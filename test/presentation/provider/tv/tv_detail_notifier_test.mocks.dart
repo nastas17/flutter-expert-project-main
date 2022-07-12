@@ -9,11 +9,15 @@ import 'package:ditonton/common/failure.dart' as _i6;
 import 'package:ditonton/domain/entities/tv_series.dart' as _i9;
 import 'package:ditonton/domain/entities/tvseries_detail.dart' as _i7;
 import 'package:ditonton/domain/repositories/tv_repository.dart' as _i2;
-import 'package:ditonton/domain/usecases/get_tv_detail.dart' as _i4;
-import 'package:ditonton/domain/usecases/get_tv_recommendations.dart' as _i8;
-import 'package:ditonton/domain/usecases/get_watchlist_tv_status.dart' as _i10;
-import 'package:ditonton/domain/usecases/remove_tv_watchlist.dart' as _i12;
-import 'package:ditonton/domain/usecases/save_tv_watchlist.dart' as _i11;
+import 'package:ditonton/domain/usecases/tv_usecase/get_tv_detail.dart' as _i4;
+import 'package:ditonton/domain/usecases/tv_usecase/get_tv_recommendations.dart'
+    as _i8;
+import 'package:ditonton/domain/usecases/tv_usecase/get_watchlist_tv_status.dart'
+    as _i10;
+import 'package:ditonton/domain/usecases/tv_usecase/remove_tv_watchlist.dart'
+    as _i12;
+import 'package:ditonton/domain/usecases/tv_usecase/save_tv_watchlist.dart'
+    as _i11;
 import 'package:mockito/mockito.dart' as _i1;
 
 // ignore_for_file: type=lint

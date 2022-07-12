@@ -5,7 +5,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:ditonton/domain/entities/tv_series.dart';
-import 'package:ditonton/domain/usecases/get_top_rated_tv.dart';
+import 'package:ditonton/domain/usecases/tv_usecase/get_top_rated_tv.dart';
 import 'package:ditonton/presentation/provider/top_rated_tv_notifier.dart';
 
 import 'top_rated_tv_notifier_test.mocks.dart';

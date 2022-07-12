@@ -1,5 +1,6 @@
 import 'package:equatable/equatable.dart';
 
+// ignore: must_be_immutable
 class TvSeries extends Equatable {
   TvSeries({
     required this.backdropPath,
@@ -17,7 +18,7 @@ class TvSeries extends Equatable {
     required this.voteCount,
   });
 
-  TvSeries.watchlist({
+  TvSeries.watchlistTv({
     this.backdropPath,
     this.genreIds,
     this.originalName,

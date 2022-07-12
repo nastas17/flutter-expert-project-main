@@ -1,7 +1,7 @@
 import 'package:ditonton/domain/entities/tv_series.dart';
-import 'package:ditonton/domain/usecases/get_on_air_tv.dart';
-import 'package:ditonton/domain/usecases/get_popular_tv.dart';
-import 'package:ditonton/domain/usecases/get_top_rated_tv.dart';
+import 'package:ditonton/domain/usecases/tv_usecase/get_on_air_tv.dart';
+import 'package:ditonton/domain/usecases/tv_usecase/get_popular_tv.dart';
+import 'package:ditonton/domain/usecases/tv_usecase/get_top_rated_tv.dart';
 import 'package:flutter/material.dart';
 import 'package:ditonton/common/state_enum.dart';
 

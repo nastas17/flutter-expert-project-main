@@ -5,7 +5,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:ditonton/domain/entities/tv_series.dart';
-import 'package:ditonton/domain/usecases/search_tv.dart';
+import 'package:ditonton/domain/usecases/tv_usecase/search_tv.dart';
 import 'package:ditonton/presentation/provider/tv_search_notifier.dart';
 
 import 'tv_search_notifier_test.mocks.dart';

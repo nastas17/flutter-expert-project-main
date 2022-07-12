@@ -1,7 +1,5 @@
-import 'package:ditonton/data/models/movie_table.dart';
-import 'package:ditonton/data/models/tv_detail.dart';
-import 'package:ditonton/data/models/tv_model.dart';
-import 'package:ditonton/data/models/tv_table.dart';
+import 'package:ditonton/data/models/movie_model/movie_table.dart';
+import 'package:ditonton/data/models/tv_model/tv_table.dart';
 import 'package:ditonton/domain/entities/genre.dart';
 import 'package:ditonton/domain/entities/movie.dart';
 import 'package:ditonton/domain/entities/movie_detail.dart';
@@ -91,7 +89,7 @@ final testTvTable = TvTable(
   overview: 'overview',
 );
 
-final testWatchTv = TvSeries.watchlist(
+final testWatchTv = TvSeries.watchlistTv(
   id: 1,
   overview: 'overview',
   posterPath: 'posterPath',

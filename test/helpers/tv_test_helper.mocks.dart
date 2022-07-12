@@ -11,10 +11,10 @@ import 'package:ditonton/common/failure.dart' as _i7;
 import 'package:ditonton/data/datasources/db/database_helper.dart' as _i14;
 import 'package:ditonton/data/datasources/tv_local_data_source.dart' as _i12;
 import 'package:ditonton/data/datasources/tv_remote_data_source.dart' as _i10;
-import 'package:ditonton/data/models/movie_table.dart' as _i16;
-import 'package:ditonton/data/models/tv_detail.dart' as _i3;
-import 'package:ditonton/data/models/tv_model.dart' as _i11;
-import 'package:ditonton/data/models/tv_table.dart' as _i13;
+import 'package:ditonton/data/models/movie_model/movie_table.dart' as _i16;
+import 'package:ditonton/data/models/tv_model/tv_detail.dart' as _i3;
+import 'package:ditonton/data/models/tv_model/tv_model.dart' as _i11;
+import 'package:ditonton/data/models/tv_model/tv_table.dart' as _i13;
 import 'package:ditonton/domain/entities/tv_series.dart' as _i8;
 import 'package:ditonton/domain/entities/tvseries_detail.dart' as _i9;
 import 'package:ditonton/domain/repositories/tv_repository.dart' as _i5;
@@ -35,7 +35,7 @@ import 'package:sqflite/sqflite.dart' as _i15;
 class _FakeEither_0<L, R> extends _i1.Fake implements _i2.Either<L, R> {}
 
 class _FakeTvSeriesDetailResponse_1 extends _i1.Fake
-    implements _i3.TvSeriesDetailResponse {}
+    implements _i3.TvDetailResponse {}
 
 class _FakeResponse_2 extends _i1.Fake implements _i4.Response {}
 
@@ -147,11 +147,11 @@ class MockTvRemoteDataSource extends _i1.Mock
               returnValue: Future<List<_i11.TvModel>>.value(<_i11.TvModel>[]))
           as _i6.Future<List<_i11.TvModel>>);
   @override
-  _i6.Future<_i3.TvSeriesDetailResponse> getTvDetail(int? id) =>
+  _i6.Future<_i3.TvDetailResponse> getTvDetail(int? id) =>
       (super.noSuchMethod(Invocation.method(#getTvDetail, [id]),
-              returnValue: Future<_i3.TvSeriesDetailResponse>.value(
+              returnValue: Future<_i3.TvDetailResponse>.value(
                   _FakeTvSeriesDetailResponse_1()))
-          as _i6.Future<_i3.TvSeriesDetailResponse>);
+          as _i6.Future<_i3.TvDetailResponse>);
   @override
   _i6.Future<List<_i11.TvModel>> getTvRecommendations(int? id) =>
       (super.noSuchMethod(Invocation.method(#getTvRecommendations, [id]),

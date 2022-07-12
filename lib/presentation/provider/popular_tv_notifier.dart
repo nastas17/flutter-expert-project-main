@@ -1,6 +1,6 @@
 import 'package:ditonton/common/state_enum.dart';
 import 'package:ditonton/domain/entities/tv_series.dart';
-import 'package:ditonton/domain/usecases/get_popular_tv.dart';
+import 'package:ditonton/domain/usecases/tv_usecase/get_popular_tv.dart';
 import 'package:flutter/foundation.dart';
 
 class PopularTvNotifier extends ChangeNotifier {
@@ -30,7 +30,7 @@ class PopularTvNotifier extends ChangeNotifier {
         notifyListeners();
       },
       (tvSeriesData) {
-        _tvSeries = tvSeries;
+        _tvSeries = tvSeriesData;
         _state = RequestState.Loaded;
         notifyListeners();
       },

@@ -1,10 +1,10 @@
 import 'dart:io';
 
 import 'package:dartz/dartz.dart';
-import 'package:ditonton/data/models/genre_model.dart';
-import 'package:ditonton/data/models/season_model.dart';
-import 'package:ditonton/data/models/tv_detail.dart';
-import 'package:ditonton/data/models/tv_model.dart';
+import 'package:ditonton/data/models/movie_model/genre_model.dart';
+import 'package:ditonton/data/models/tv_model/season_model.dart';
+import 'package:ditonton/data/models/tv_model/tv_detail.dart';
+import 'package:ditonton/data/models/tv_model/tv_model.dart';
 import 'package:ditonton/data/repositories/tv_repository_impl.dart';
 import 'package:ditonton/common/exception.dart';
 import 'package:ditonton/common/failure.dart';
@@ -186,7 +186,7 @@ void main() {
 
   group('Get Tv Detail', () {
     final tId = 1;
-    final tTvResponse = TvSeriesDetailResponse(
+    final tTvResponse = TvDetailResponse(
       adult: false,
       backdropPath: "/4g5gK5eGWZg8swIZl6eX2AoJp8S.jpg",
       episodeRunTime: [42],

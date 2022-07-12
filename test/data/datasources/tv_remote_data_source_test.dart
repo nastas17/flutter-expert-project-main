@@ -1,14 +1,11 @@
 import 'dart:convert';
-import 'dart:io';
-
 import 'package:ditonton/data/datasources/tv_remote_data_source.dart';
-import 'package:ditonton/data/models/tv_detail.dart';
-import 'package:ditonton/data/models/tv_response.dart';
+import 'package:ditonton/data/models/tv_model/tv_detail.dart';
+import 'package:ditonton/data/models/tv_model/tv_response.dart';
 import 'package:ditonton/common/exception.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:http/http.dart' as http;
 import 'package:mockito/mockito.dart';
-
 import '../../json_reader.dart';
 import '../../helpers/test_helper.mocks.dart';
 
@@ -113,7 +110,7 @@ void main() {
 
   group('get tv detail', () {
     final tId = 1;
-    final tTvDetail = TvSeriesDetailResponse.fromJson(
+    final tTvDetail = TvDetailResponse.fromJson(
         json.decode(readJson('dummy_data/tv_detail.json')));
 
     test('should return movie detail when the response code is 200', () async {
