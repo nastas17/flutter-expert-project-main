@@ -38,6 +38,14 @@ dependencies:
   sqflite: ^2.0.0+3
   path_provider: ^2.0.2
   equatable: ^2.0.3
+  about:
+    path: about
+  core:
+    path: core
+  search:
+    path: search
+
+
 
 dev_dependencies:
   mockito: ^5.0.8
@@ -65,7 +73,7 @@ flutter:
   # https://flutter.dev/assets-and-images/#resolution-aware.
 
   # For details regarding adding assets from package dependencies, see
-  # https://flutter.dev/assets-and-images/#from-packages
+  # https://flutter.dev/assets-zand-images/#from-packages
 
   # To add custom fonts to your application, add a fonts section here,
   # in this "flutter" section. Each entry in this list should have a
