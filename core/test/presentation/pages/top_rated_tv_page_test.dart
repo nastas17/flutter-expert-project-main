@@ -55,8 +55,8 @@ void main() {
     "Page should display when data is loaded",
     (WidgetTester tester) async {
       when(() => bloc.stream)
-          .thenAnswer((_) => Stream.value(TvTopRatedHasData(tTvList)));
-      when(() => bloc.state).thenReturn(TvTopRatedHasData(tTvList));
+          .thenAnswer((_) => Stream.value(TvTopRatedLoaded(tTvList)));
+      when(() => bloc.state).thenReturn(TvTopRatedLoaded(tTvList));
 
       final listViewFinder = find.byType(ListView);
 

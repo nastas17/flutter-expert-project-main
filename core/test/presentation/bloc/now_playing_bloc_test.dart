@@ -44,7 +44,7 @@ void main() {
     });
 
     blocTest<NowPlayingMoviesBloc, NowPlayingMoviesState>(
-      'Should emit [Loading, HasData] when data is gotten successfully',
+      'Should emit [Loading, Loaded] when data is gotten successfully',
       build: () {
         when(mockNowPlaying.execute())
             .thenAnswer((_) async => Right(tMovieList));
@@ -52,10 +52,10 @@ void main() {
       },
       act: (bloc) => bloc.add(NowPlayingMoviesLoad()),
       expect: () =>
-          [NowPlayingMoviesLoading(), NowPlayingMoviesHasData(tMovieList)],
+          [NowPlayingMoviesLoading(), NowPlayingMoviesLoaded(tMovieList)],
       verify: (bloc) {
         verify(mockNowPlaying.execute());
-        return NowPlayingMoviesHasData(tMovieList).props;
+        return NowPlayingMoviesLoaded(tMovieList).props;
       },
     );
 

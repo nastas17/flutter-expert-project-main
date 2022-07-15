@@ -58,7 +58,7 @@ void main() {
     });
 
     blocTest<TvDetailBloc, TvDetailState>(
-      'Should emit [Loading, HasData] when data is gotten successfully',
+      'Should emit [Loading, Loaded] when data is gotten successfully',
       build: () {
         when(mockGetTvDetail.execute(tId))
             .thenAnswer((_) async => Right(testTvDetail));
@@ -67,7 +67,7 @@ void main() {
       act: (bloc) => bloc.add(TvDetailLoad(tId)),
       expect: () => [
         TvDetailLoading(),
-        TvDetailHasData(testTvDetail),
+        TvDetailLoaded(testTvDetail),
       ],
       verify: (bloc) {
         verify(mockGetTvDetail.execute(tId));

@@ -42,7 +42,7 @@ void main() {
   });
 
   blocTest<MovieSearchBloc, MovieSearchState>(
-      'should emit [Loading, HasData] when data is fetched sucessfully',
+      'should emit [Loading, Loaded] when data is fetched sucessfully',
       build: () {
         when(mockSearchMovies.execute(tQuery))
             .thenAnswer((_) async => Right(tMovieList));
@@ -52,7 +52,7 @@ void main() {
       wait: const Duration(milliseconds: 750),
       expect: () => [
             MovieSearchLoading(),
-            MovieSearchHasData(tMovieList),
+            MovieSearchLoaded(tMovieList),
           ],
       verify: (bloc) {
         verify(mockSearchMovies.execute(tQuery));

@@ -28,7 +28,7 @@ class TvOnAirBloc extends Bloc<TvOnAirEvent, TvOnAirState> {
         emit(TvOnAirError(failure.message));
       },
       (data) {
-        data.isEmpty ? emit(TvOnAirEmpty()) : emit(TvOnAirHasData(data));
+        data.isEmpty ? emit(TvOnAirEmpty()) : emit(TvOnAirLoaded(data));
       },
     );
   }

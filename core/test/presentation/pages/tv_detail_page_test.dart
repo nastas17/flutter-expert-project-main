@@ -54,10 +54,9 @@ void main() {
   testWidgets(
       'Watchlist button should display add icon when movie not added to watchlist',
       (WidgetTester tester) async {
-    when(() => fakeTvDetailBloc.state)
-        .thenReturn(TvDetailHasData(testTvDetail));
+    when(() => fakeTvDetailBloc.state).thenReturn(TvDetailLoaded(testTvDetail));
     when(() => fakeTvRecommendationsBloc.state)
-        .thenReturn(TvRecommendationsHasData(tTvList));
+        .thenReturn(TvRecommendationsLoaded(tTvList));
     when(() => fakeWatchlistTvBloc.state).thenReturn(TvAddedToWatchlist(false));
 
     final watchlistButtonIcon = find.byIcon(Icons.add);
@@ -70,10 +69,9 @@ void main() {
   testWidgets(
       'Watchlist button should dispay check icon when movie is added to wathclist',
       (WidgetTester tester) async {
-    when(() => fakeTvDetailBloc.state)
-        .thenReturn(TvDetailHasData(testTvDetail));
+    when(() => fakeTvDetailBloc.state).thenReturn(TvDetailLoaded(testTvDetail));
     when(() => fakeTvRecommendationsBloc.state)
-        .thenReturn(TvRecommendationsHasData(tTvList));
+        .thenReturn(TvRecommendationsLoaded(tTvList));
     when(() => fakeWatchlistTvBloc.state).thenReturn(TvAddedToWatchlist(true));
 
     final watchlistButtonIcon = find.byIcon(Icons.check);
@@ -86,10 +84,9 @@ void main() {
   testWidgets(
       'Watchlist button should display Snackbar when added to watchlist',
       (WidgetTester tester) async {
-    when(() => fakeTvDetailBloc.state)
-        .thenReturn(TvDetailHasData(testTvDetail));
+    when(() => fakeTvDetailBloc.state).thenReturn(TvDetailLoaded(testTvDetail));
     when(() => fakeTvRecommendationsBloc.state)
-        .thenReturn(TvRecommendationsHasData(tTvList));
+        .thenReturn(TvRecommendationsLoaded(tTvList));
     when(() => fakeWatchlistTvBloc.state).thenReturn(TvAddedToWatchlist(true));
     when(() => fakeWatchlistTvBloc.state)
         .thenReturn(TvWatchlistMessage('Added to Watchlist'));

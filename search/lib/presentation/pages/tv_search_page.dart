@@ -39,7 +39,7 @@ class SearchPageTv extends StatelessWidget {
                 return Center(
                   child: CircularProgressIndicator(),
                 );
-              } else if (state is TvSearchHasData) {
+              } else if (state is TvSearchLoaded) {
                 final result = state.result;
                 return Expanded(
                   child: ListView.builder(

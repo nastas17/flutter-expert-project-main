@@ -49,7 +49,7 @@ class _TvDetailPageState extends State<TvDetailPage> {
             return Center(
               child: CircularProgressIndicator(),
             );
-          } else if (state is TvDetailHasData) {
+          } else if (state is TvDetailLoaded) {
             final tv = state.result;
             return SafeArea(
               child: DetailContent(
@@ -288,7 +288,7 @@ class _DetailContentState extends State<DetailContent> {
                                   );
                                 } else if (state is TvRecommendationsError) {
                                   return Text(state.message);
-                                } else if (state is TvRecommendationsHasData) {
+                                } else if (state is TvRecommendationsLoaded) {
                                   return Container(
                                     height: 150,
                                     child: ListView.builder(

@@ -100,7 +100,7 @@ class _HomeTvPageState extends State<HomeTvPage> {
                   return Center(
                     child: CircularProgressIndicator(),
                   );
-                } else if (state is TvOnAirHasData) {
+                } else if (state is TvOnAirLoaded) {
                   return TvList(state.result);
                 } else {
                   return Text('Failed');
@@ -117,7 +117,7 @@ class _HomeTvPageState extends State<HomeTvPage> {
                   return Center(
                     child: CircularProgressIndicator(),
                   );
-                } else if (state is TvPopularHasData) {
+                } else if (state is TvPopularLoaded) {
                   return TvList(state.result);
                 } else {
                   return Text('Failed');
@@ -134,7 +134,7 @@ class _HomeTvPageState extends State<HomeTvPage> {
                   return Center(
                     child: CircularProgressIndicator(),
                   );
-                } else if (state is TvTopRatedHasData) {
+                } else if (state is TvTopRatedLoaded) {
                   return TvList(state.result);
                 } else {
                   return Text('Failed');

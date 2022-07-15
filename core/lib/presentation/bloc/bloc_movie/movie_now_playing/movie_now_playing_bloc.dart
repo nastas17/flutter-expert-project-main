@@ -32,7 +32,7 @@ class NowPlayingMoviesBloc
       (data) {
         data.isEmpty
             ? emit(NowPlayingMoviesEmpty())
-            : emit(NowPlayingMoviesHasData(data));
+            : emit(NowPlayingMoviesLoaded(data));
       },
     );
   }

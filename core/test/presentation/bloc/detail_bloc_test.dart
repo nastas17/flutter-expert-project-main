@@ -25,7 +25,7 @@ void main() {
   });
 
   blocTest<MovieDetailBloc, MovieDetailState>(
-    'Should emit [Loading, HasData] when data is gotten successfully',
+    'Should emit [Loading, Loaded] when data is gotten successfully',
     build: () {
       when(usecase.execute(tId))
           .thenAnswer((_) async => Right(testMovieDetail));
@@ -35,7 +35,7 @@ void main() {
     wait: const Duration(milliseconds: 100),
     expect: () => [
       MovieDetailLoading(),
-      MovieDetailHasData(testMovieDetail),
+      MovieDetailLoaded(testMovieDetail),
     ],
     verify: (bloc) {
       verify(usecase.execute(tId));

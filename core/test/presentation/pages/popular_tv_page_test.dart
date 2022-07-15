@@ -55,8 +55,8 @@ void main() {
     "Page should display ListView when data is loaded",
     (WidgetTester tester) async {
       when(() => bloc.stream)
-          .thenAnswer(((_) => Stream.value(TvPopularHasData(tTvList))));
-      when(() => bloc.state).thenReturn(TvPopularHasData(tTvList));
+          .thenAnswer(((_) => Stream.value(TvPopularLoaded(tTvList))));
+      when(() => bloc.state).thenReturn(TvPopularLoaded(tTvList));
 
       final listViewFinder = find.byType(ListView);
 

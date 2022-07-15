@@ -28,7 +28,7 @@ class MovieDetailBloc extends Bloc<MovieDetailEvent, MovieDetailState> {
         emit(MovieDetailError(failure.message));
       },
       (data) {
-        emit(MovieDetailHasData(data));
+        emit(MovieDetailLoaded(data));
       },
     );
   }

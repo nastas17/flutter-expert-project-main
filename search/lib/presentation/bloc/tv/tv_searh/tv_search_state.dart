@@ -20,10 +20,10 @@ class TvSearchError extends TvSearchState {
   List<Object> get props => [message];
 }
 
-class TvSearchHasData extends TvSearchState {
+class TvSearchLoaded extends TvSearchState {
   final List<TvSeries> result;
 
-  TvSearchHasData(this.result);
+  TvSearchLoaded(this.result);
 
   @override
   List<Object> get props => [result];

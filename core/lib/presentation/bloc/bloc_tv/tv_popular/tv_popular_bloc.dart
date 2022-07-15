@@ -28,7 +28,7 @@ class TvPopularBloc extends Bloc<TvPopularEvent, TvPopularState> {
         emit(TvPopularError(failure.message));
       },
       (data) {
-        data.isEmpty ? emit(TvPopularEmpty()) : emit(TvPopularHasData(data));
+        data.isEmpty ? emit(TvPopularEmpty()) : emit(TvPopularLoaded(data));
       },
     );
   }

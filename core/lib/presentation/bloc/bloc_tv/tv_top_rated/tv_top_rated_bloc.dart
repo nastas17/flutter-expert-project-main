@@ -28,7 +28,7 @@ class TvTopRatedBloc extends Bloc<TvTopRatedEvent, TvTopRatedState> {
         emit(TvTopRatedError(failure.message));
       },
       (data) {
-        data.isEmpty ? emit(TvTopRatedEmpty()) : emit(TvTopRatedHasData(data));
+        data.isEmpty ? emit(TvTopRatedEmpty()) : emit(TvTopRatedLoaded(data));
       },
     );
   }

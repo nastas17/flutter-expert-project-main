@@ -26,7 +26,7 @@ class TvSearchBloc extends Bloc<TvSearchEvent, TvSearchState> {
           emit(TvSearchError(failure.message));
         },
         (data) {
-          emit(TvSearchHasData(data));
+          emit(TvSearchLoaded(data));
         },
       );
     }, transformer: debounce(const Duration(milliseconds: 750)));

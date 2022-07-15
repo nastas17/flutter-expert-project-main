@@ -29,7 +29,7 @@ class TvDetailBloc extends Bloc<TvDetailEvent, TvDetailState> {
         emit(TvDetailError(failure.message));
       },
       (data) {
-        emit(TvDetailHasData(data));
+        emit(TvDetailLoaded(data));
       },
     );
   }

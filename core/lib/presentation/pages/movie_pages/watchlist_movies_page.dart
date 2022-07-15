@@ -45,7 +45,7 @@ class _WatchlistMoviesPageState extends State<WatchlistMoviesPage>
               return Center(
                 child: CircularProgressIndicator(),
               );
-            } else if (state is WatchlistMoviesHasData) {
+            } else if (state is WatchlistMoviesLoaded) {
               return ListView.builder(
                 itemBuilder: (context, index) {
                   final movie = state.result[index];

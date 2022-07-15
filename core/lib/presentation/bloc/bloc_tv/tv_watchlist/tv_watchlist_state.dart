@@ -2,10 +2,10 @@ part of 'tv_watchlist_bloc.dart';
 
 abstract class TvWatchlistState extends Equatable {}
 
-class TvWatchlistHasData extends TvWatchlistState {
+class TvWatchlistLoaded extends TvWatchlistState {
   final List<TvSeries> result;
 
-  TvWatchlistHasData(this.result);
+  TvWatchlistLoaded(this.result);
 
   @override
   List<Object> get props => [result];

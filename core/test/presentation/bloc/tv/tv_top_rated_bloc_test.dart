@@ -43,7 +43,7 @@ void main() {
     });
 
     blocTest<TvTopRatedBloc, TvTopRatedState>(
-      'Should emit [Loading, HasData] when data is gotten successfully',
+      'Should emit [Loading, Loaded] when data is gotten successfully',
       build: () {
         when(mockGetTopRatedTv.execute())
             .thenAnswer((_) async => Right(tTvList));
@@ -52,7 +52,7 @@ void main() {
       act: (bloc) => bloc.add(TvTopRatedLoad()),
       expect: () => [
         TvTopRatedLoading(),
-        TvTopRatedHasData(tTvList),
+        TvTopRatedLoaded(tTvList),
       ],
       verify: (bloc) {
         verify(mockGetTopRatedTv.execute());

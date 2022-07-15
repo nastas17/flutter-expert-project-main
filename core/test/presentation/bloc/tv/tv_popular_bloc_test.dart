@@ -43,7 +43,7 @@ void main() {
     });
 
     blocTest<TvPopularBloc, TvPopularState>(
-      'Should emit [Loading, HasData] when data is gotten successfully',
+      'Should emit [Loading, Loaded] when data is gotten successfully',
       build: () {
         when(mockGetPopularTv.execute())
             .thenAnswer((_) async => Right(tTvList));
@@ -52,7 +52,7 @@ void main() {
       act: (bloc) => bloc.add(LoadTvPopular()),
       expect: () => [
         TvPopularLoading(),
-        TvPopularHasData(tTvList),
+        TvPopularLoaded(tTvList),
       ],
       verify: (bloc) {
         verify(mockGetPopularTv.execute());

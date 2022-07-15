@@ -21,10 +21,10 @@ class MovieDetailError extends MovieDetailState {
   List<Object> get props => [message];
 }
 
-class MovieDetailHasData extends MovieDetailState {
+class MovieDetailLoaded extends MovieDetailState {
   final MovieDetail result;
 
-  MovieDetailHasData(this.result);
+  MovieDetailLoaded(this.result);
 
   @override
   List<Object> get props => [result];

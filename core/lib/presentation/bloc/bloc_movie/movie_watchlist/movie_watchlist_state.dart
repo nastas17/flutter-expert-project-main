@@ -21,10 +21,10 @@ class WatchlistMoviesError extends WatchlistMoviesState {
   List<Object> get props => [message];
 }
 
-class WatchlistMoviesHasData extends WatchlistMoviesState {
+class WatchlistMoviesLoaded extends WatchlistMoviesState {
   final List<Movie> result;
 
-  WatchlistMoviesHasData(this.result);
+  WatchlistMoviesLoaded(this.result);
 
   @override
   List<Object> get props => [result];

@@ -20,10 +20,10 @@ class TvTopRatedEmpty extends TvTopRatedState {
   List<Object> get props => [];
 }
 
-class TvTopRatedHasData extends TvTopRatedState {
+class TvTopRatedLoaded extends TvTopRatedState {
   final List<TvSeries> result;
 
-  TvTopRatedHasData(this.result);
+  TvTopRatedLoaded(this.result);
 
   @override
   List<Object> get props => [result];

@@ -101,7 +101,7 @@ class _HomeMoviePageState extends State<HomeMoviePage> {
                     return Center(
                       child: CircularProgressIndicator(),
                     );
-                  } else if (state is NowPlayingMoviesHasData) {
+                  } else if (state is NowPlayingMoviesLoaded) {
                     return MovieList(state.result);
                   } else {
                     return Text('Failed');

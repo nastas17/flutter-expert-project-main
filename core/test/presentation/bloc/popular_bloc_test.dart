@@ -25,7 +25,7 @@ void main() {
   });
 
   blocTest<PopularMoviesBloc, PopularMoviesState>(
-    'Should emit [Loading, HasData] when data is gotten successfully',
+    'Should emit [Loading, Loaded] when data is gotten successfully',
     build: () {
       when(usecase.execute()).thenAnswer((_) async => Right(testMovieList));
       return bloc;

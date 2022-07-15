@@ -43,7 +43,7 @@ void main() {
     });
 
     blocTest<TvOnAirBloc, TvOnAirState>(
-      'Should emit [Loading, HasData] when data is gotten successfully',
+      'Should emit [Loading, Loaded] when data is gotten successfully',
       build: () {
         when(mockTvOnAir.execute()).thenAnswer((_) async => Right(tTvList));
         return onAirTvBloc;
@@ -51,7 +51,7 @@ void main() {
       act: (bloc) => bloc.add(TvOnAirLoad()),
       expect: () => [
         TvOnAirLoading(),
-        TvOnAirHasData(tTvList),
+        TvOnAirLoaded(tTvList),
       ],
       verify: (bloc) {
         verify(mockTvOnAir.execute());

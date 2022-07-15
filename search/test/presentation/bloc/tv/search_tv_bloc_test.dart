@@ -43,7 +43,7 @@ void main() {
     expect(tvSearchBloc.state, TvSearchEmpty());
   });
   blocTest<TvSearchBloc, TvSearchState>(
-      'should emit [Loading, HasData] when data is obtained sucessfulle',
+      'should emit [Loading, Loaded] when data is obtained sucessfulle',
       build: () {
         when(mockSearchTv.execute(tQuery))
             .thenAnswer((_) async => Right(tTvList));
@@ -53,7 +53,7 @@ void main() {
       wait: const Duration(milliseconds: 750),
       expect: () => [
             TvSearchLoading(),
-            TvSearchHasData(tTvList),
+            TvSearchLoaded(tTvList),
           ],
       verify: (bloc) {
         verify(mockSearchTv.execute(tQuery));

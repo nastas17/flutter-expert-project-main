@@ -33,7 +33,7 @@ class _PopularTvPageState extends State<PopularTvPage> {
               return Center(
                 child: CircularProgressIndicator(),
               );
-            } else if (state is TvPopularHasData) {
+            } else if (state is TvPopularLoaded) {
               return ListView.builder(
                 itemBuilder: (context, index) {
                   return TvSeriesCard(state.result[index]);

@@ -27,7 +27,7 @@ class MovieSearchBloc extends Bloc<MovieSearchEvent, MovieSearchState> {
           emit(MovieSearchError(failure.message));
         },
         (data) {
-          emit(MovieSearchHasData(data));
+          emit(MovieSearchLoaded(data));
         },
       );
     }, transformer: debounce(const Duration(milliseconds: 750)));

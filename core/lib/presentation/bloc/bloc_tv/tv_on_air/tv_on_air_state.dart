@@ -21,10 +21,10 @@ class TvOnAirError extends TvOnAirState {
   List<Object> get props => [message];
 }
 
-class TvOnAirHasData extends TvOnAirState {
+class TvOnAirLoaded extends TvOnAirState {
   final List<TvSeries> result;
 
-  TvOnAirHasData(this.result);
+  TvOnAirLoaded(this.result);
 
   @override
   List<Object> get props => [result];

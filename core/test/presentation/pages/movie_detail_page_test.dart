@@ -5,13 +5,13 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 
-class MockMovieDetailBloc extends Mock implements MovieDetailBloc {}
+class FakeMovieDetailBloc extends Mock implements MovieDetailBloc {}
 
 class MovieDetailStateFake extends Fake implements MovieDetailState {}
 
 class MovieDetailEventFake extends Fake implements MovieDetailEvent {}
 
-class MockRecomendationMovieBloc extends Mock
+class FakeRecomendationMovieBloc extends Mock
     implements MovieRecomendationBloc {}
 
 class RecomendationMovieStateFake extends Fake
@@ -21,8 +21,8 @@ class RecomendationMovieEventFake extends Fake
     implements MovieRecomendationEvent {}
 
 void main() {
-  late MockMovieDetailBloc mockMovieDetailBloc;
-  late MockRecomendationMovieBloc mockRecomendationMovieBloc;
+  late FakeMovieDetailBloc mockMovieDetailBloc;
+  late FakeRecomendationMovieBloc mockRecomendationMovieBloc;
 
   setUpAll(() {
     registerFallbackValue(MovieDetailStateFake());
@@ -32,8 +32,8 @@ void main() {
   });
 
   setUp(() {
-    mockMovieDetailBloc = MockMovieDetailBloc();
-    mockRecomendationMovieBloc = MockRecomendationMovieBloc();
+    mockMovieDetailBloc = FakeMovieDetailBloc();
+    mockRecomendationMovieBloc = FakeRecomendationMovieBloc();
   });
 
   Widget _makeTestableWidget(Widget body) {

@@ -32,7 +32,7 @@ class TvRecommendationsBloc
       (data) {
         data.isEmpty
             ? emit(TvRecommendationsEmpty())
-            : emit(TvRecommendationsHasData(data));
+            : emit(TvRecommendationsLoaded(data));
       },
     );
   }

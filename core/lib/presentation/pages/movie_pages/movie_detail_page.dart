@@ -50,7 +50,7 @@ class _MovieDetailPageState extends State<MovieDetailPage> {
             return Center(
               child: CircularProgressIndicator(),
             );
-          } else if (state is MovieDetailHasData) {
+          } else if (state is MovieDetailLoaded) {
             final movie = state.result;
             return SafeArea(
               child: DetailContent(

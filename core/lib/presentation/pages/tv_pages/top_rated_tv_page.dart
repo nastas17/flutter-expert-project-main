@@ -33,7 +33,7 @@ class _TopRatedTvPageState extends State<TopRatedTvPage> {
               return Center(
                 child: CircularProgressIndicator(),
               );
-            } else if (state is TvTopRatedHasData) {
+            } else if (state is TvTopRatedLoaded) {
               return ListView.builder(
                 itemBuilder: (context, index) {
                   final series = state.result[index];

@@ -45,7 +45,7 @@ void main() {
     });
 
     blocTest<TvRecommendationsBloc, TvRecommendationsState>(
-      'Should emit [Loading, HasData] when data is gotten successfully',
+      'Should emit [Loading, Loaded] when data is gotten successfully',
       build: () {
         when(mockGetTvRecommendations.execute(tId))
             .thenAnswer((_) async => Right(tTvList));
@@ -54,7 +54,7 @@ void main() {
       act: (bloc) => bloc.add(LoadTvRecommendations(tId)),
       expect: () => [
         TvRecommendationsLoading(),
-        TvRecommendationsHasData(tTvList),
+        TvRecommendationsLoaded(tTvList),
       ],
       verify: (bloc) {
         verify(mockGetTvRecommendations.execute(tId));

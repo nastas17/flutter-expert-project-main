@@ -47,7 +47,7 @@ class WatchlistMoviesBloc
       (data) {
         data.isEmpty
             ? emit(WatchlistMoviesEmpty())
-            : emit(WatchlistMoviesHasData(data));
+            : emit(WatchlistMoviesLoaded(data));
       },
     );
   }

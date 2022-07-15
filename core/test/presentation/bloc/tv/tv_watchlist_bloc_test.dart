@@ -96,7 +96,7 @@ void main() {
     });
 
     blocTest<TvWatchlistBloc, TvWatchlistState>(
-      'Should emit [Loading, HasData] when data is gotten successfully',
+      'Should emit [Loading, Loaded] when data is gotten successfully',
       build: () {
         when(mockGetWatchlistTv.execute())
             .thenAnswer((_) async => Right(tTvList));
@@ -105,7 +105,7 @@ void main() {
       act: (bloc) => bloc.add(TvWatchlistLoad()),
       expect: () => [
         TvWatchlistLoading(),
-        TvWatchlistHasData(tTvList),
+        TvWatchlistLoaded(tTvList),
       ],
       verify: (bloc) {
         verify(mockGetWatchlistTv.execute());
@@ -145,7 +145,7 @@ void main() {
 
   // group('bloc add watch list tv testing', () {
   //   blocTest<TvWatchlistBloc, TvWatchlistState>(
-  //     'Should emit [Loading, HasData] when data is gotten successfully',
+  //     'Should emit [Loading, Loaded] when data is gotten successfully',
   //     build: () {
   //       when(mockSaveTvWatchlist.execute(testTvDetail))
   //           .thenAnswer((_) async => Right('Added to Watchlist'));
@@ -164,7 +164,7 @@ void main() {
 
   //   group('bloc remove watch list tv testing', () {
   //     blocTest<TvWatchlistBloc, TvWatchlistState>(
-  //       'Should emit [Loading, HasData] when data is gotten successfully',
+  //       'Should emit [Loading, Loaded] when data is gotten successfully',
   //       build: () {
   //         when(mockRemoveTvWatchlist.execute(testTvDetail))
   //             .thenAnswer((_) async => Right('Delete to Watchlist'));

@@ -21,10 +21,10 @@ class TvDetailError extends TvDetailState {
   List<Object> get props => [message];
 }
 
-class TvDetailHasData extends TvDetailState {
+class TvDetailLoaded extends TvDetailState {
   final TvDetail result;
 
-  TvDetailHasData(this.result);
+  TvDetailLoaded(this.result);
 
   @override
   List<Object> get props => [result];

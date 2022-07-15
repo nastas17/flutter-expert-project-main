@@ -21,10 +21,10 @@ class TvPopularError extends TvPopularState {
   List<Object> get props => [message];
 }
 
-class TvPopularHasData extends TvPopularState {
+class TvPopularLoaded extends TvPopularState {
   final List<TvSeries> result;
 
-  TvPopularHasData(this.result);
+  TvPopularLoaded(this.result);
 
   @override
   List<Object> get props => [result];
