@@ -13,7 +13,6 @@ dependencies:
   core:
     path: ../core
   http: ^0.13.3
-  provider: ^5.0.0
   dartz: ^0.10.0-nullsafety.2
   google_fonts: ^2.1.0
   flutter_rating_bar: ^4.0.0
@@ -22,6 +21,11 @@ dependencies:
   sqflite: ^2.0.0+3
   path_provider: ^2.0.2
   equatable: ^2.0.3
+  bloc: any
+  rxdart: ^0.27.1
+  mocktail: ^0.3.0
+  flutter_bloc: ^8.0.1
+  provider: any
 
 dev_dependencies:
   flutter_test:
@@ -29,6 +33,7 @@ dev_dependencies:
   flutter_lints: ^2.0.0
   mockito: ^5.0.8
   build_runner: ^2.0.4
+  bloc_test: ^9.0.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

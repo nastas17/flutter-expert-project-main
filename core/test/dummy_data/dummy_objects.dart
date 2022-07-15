@@ -62,6 +62,10 @@ final testMovieMap = {
   'posterPath': 'posterPath',
   'title': 'title',
 };
+final tQuery = 'Spider Man';
+final tError = 'Server Failure';
+final tId = 1;
+final tTvList = <TvSeries>[];
 
 //test tv
 final testTvSeries = TvSeries(

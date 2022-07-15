@@ -7,12 +7,12 @@ import 'package:mockito/mockito.dart';
 import '../../helpers/tv_test_helper.mocks.dart';
 
 void main() {
-  late SearchTv usecase;
+  late SearchTvSeries usecase;
   late MockTvRepository mockTvRepository;
 
   setUp(() {
     mockTvRepository = MockTvRepository();
-    usecase = SearchTv(mockTvRepository);
+    usecase = SearchTvSeries(mockTvRepository);
   });
 
   final tTv = <TvSeries>[];
