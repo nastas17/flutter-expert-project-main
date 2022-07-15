@@ -29,8 +29,8 @@ import 'package:core/presentation/pages/splash_screen.dart';
 import 'package:core/presentation/pages/movie_pages/top_rated_movies_page.dart';
 import 'package:core/presentation/pages/movie_pages/watchlist_movies_page.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:search/presentation/bloc/movie/movie_search/movie_search_bloc.dart';
-import 'package:search/presentation/bloc/tv/tv_searh/tv_search_bloc.dart';
+import 'package:search/presentation/bloc/movie/movie_search_bloc/movie_search_bloc.dart';
+import 'package:search/presentation/bloc/tv/tv_searh_bloc/tv_search_bloc.dart';
 import 'package:search/presentation/pages/search_page.dart';
 import 'package:search/presentation/pages/tv_search_page.dart';
 
@@ -53,7 +53,7 @@ class MyApp extends StatelessWidget {
         BlocProvider(create: (_) => di.locator<TopRatedMoviesBloc>()),
         BlocProvider(create: (_) => di.locator<MovieDetailBloc>()),
         BlocProvider(create: (_) => di.locator<MovieSearchBloc>()),
-        BlocProvider(create: (_) => di.locator<WatchlistMoviesBloc>()),
+        BlocProvider(create: (_) => di.locator<WatchlistMovieBloc>()),
         BlocProvider(create: (_) => di.locator<TvWatchlistBloc>()),
         BlocProvider(create: (_) => di.locator<TvPopularBloc>()),
         BlocProvider(create: (_) => di.locator<TvOnAirBloc>()),

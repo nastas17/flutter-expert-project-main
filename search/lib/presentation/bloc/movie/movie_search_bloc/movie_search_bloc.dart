@@ -16,7 +16,7 @@ class MovieSearchBloc extends Bloc<MovieSearchEvent, MovieSearchState> {
   }
 
   MovieSearchBloc(this._searchMovies) : super(MovieSearchEmpty()) {
-    on<OnQueryMovieChanged>((event, emit) async {
+    on<OnQueryMoviesChanged>((event, emit) async {
       final query = event.query;
 
       emit(MovieSearchLoading());

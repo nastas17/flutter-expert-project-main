@@ -1,7 +1,7 @@
 import 'package:core/core.dart';
 import 'package:core/presentation/widgets/tv_card_list.dart';
 import 'package:flutter/material.dart';
-import 'package:search/presentation/bloc/tv/tv_searh/tv_search_bloc.dart';
+import 'package:search/presentation/bloc/tv/tv_searh_bloc/tv_search_bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class SearchPageTv extends StatelessWidget {
@@ -20,7 +20,7 @@ class SearchPageTv extends StatelessWidget {
           children: [
             TextField(
               onSubmitted: (query) {
-                context.read<TvSearchBloc>().add(OnQuerySeriesChanged(query));
+                context.read<TvSearchBloc>().add(OnQueryTvChanged(query));
               },
               decoration: InputDecoration(
                 hintText: 'Search tv series title',

@@ -7,7 +7,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:search/domain/usecase/search_tv.dart';
-import 'package:search/presentation/bloc/tv/tv_searh/tv_search_bloc.dart';
+import 'package:search/presentation/bloc/tv/tv_searh_bloc/tv_search_bloc.dart';
 
 import 'search_tv_bloc_test.mocks.dart';
 
@@ -49,7 +49,7 @@ void main() {
             .thenAnswer((_) async => Right(tTvList));
         return tvSearchBloc;
       },
-      act: (bloc) => bloc.add(OnQuerySeriesChanged(tQuery)),
+      act: (bloc) => bloc.add(OnQueryTvChanged(tQuery)),
       wait: const Duration(milliseconds: 750),
       expect: () => [
             TvSearchLoading(),

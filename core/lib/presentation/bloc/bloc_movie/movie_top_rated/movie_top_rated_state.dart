@@ -15,6 +15,8 @@ class TopRatedMoviesLoaded extends TopRatedMoviesState {
   final List<Movie> result;
 
   TopRatedMoviesLoaded(this.result);
+  @override
+  List<Object> get props => [result];
 }
 
 class TopRatedMoviesError extends TopRatedMoviesState {

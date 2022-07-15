@@ -47,3 +47,12 @@ class MovieAddedToWatchlist extends WatchlistMoviesState {
   @override
   List<Object> get props => [isAddedToWatchlist];
 }
+
+class MovieWatchlistStatusLoaded extends WatchlistMoviesState {
+  final bool status;
+
+  MovieWatchlistStatusLoaded(this.status);
+
+  @override
+  List<Object> get props => [status];
+}

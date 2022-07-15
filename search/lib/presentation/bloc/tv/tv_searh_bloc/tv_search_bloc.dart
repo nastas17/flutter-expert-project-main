@@ -15,7 +15,7 @@ class TvSearchBloc extends Bloc<TvSearchEvent, TvSearchState> {
   }
 
   TvSearchBloc(this._searchTv) : super(TvSearchEmpty()) {
-    on<OnQuerySeriesChanged>((event, emit) async {
+    on<OnQueryTvChanged>((event, emit) async {
       final query = event.query;
 
       emit(TvSearchLoading());

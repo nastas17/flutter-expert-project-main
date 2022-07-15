@@ -70,7 +70,7 @@ void init() {
     ),
   );
   locator.registerFactory(
-    () => WatchlistMoviesBloc(
+    () => WatchlistMovieBloc(
       locator(),
       locator(),
       locator(),

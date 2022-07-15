@@ -87,7 +87,7 @@ class _DetailContentState extends State<DetailContent> {
           imageUrl: '$BASE_IMAGE_URL${widget.tv.posterPath}',
           width: screenWidth,
           placeholder: (context, url) => const Center(
-            child: const CircularProgressIndicator(),
+            child: CircularProgressIndicator(),
           ),
           errorWidget: (context, url, error) => const Icon(Icons.error),
         ),
@@ -398,43 +398,4 @@ class _DetailContentState extends State<DetailContent> {
 
   String _formattedDuration(List<int> runtimes) =>
       runtimes.map((runtime) => _showDuration(runtime)).join(", ");
-
-  // Widget _buildRecommendationsTvItem(
-  //   BuildContext context,
-  // ) {
-  //   return Container(
-  //     height: 150,
-  //     child: ListView.builder(
-  //       scrollDirection: Axis.horizontal,
-  //       itemBuilder: (context, index) {
-  //         final tvRecommendations = recommendations[index];
-  //         return Padding(
-  //           padding: const EdgeInsets.all(4.0),
-  //           child: InkWell(
-  //             onTap: () {
-  //               Navigator.pushReplacementNamed(
-  //                 context,
-  //                 TvDetailPage.ROUTE_NAME,
-  //                 arguments: tvRecommendations.id,
-  //               );
-  //             },
-  //             child: ClipRRect(
-  //               borderRadius: const BorderRadius.all(
-  //                 Radius.circular(8),
-  //               ),
-  //               child: CachedNetworkImage(
-  //                 imageUrl: '$BASE_IMAGE_URL${tvRecommendations.posterPath}',
-  //                 placeholder: (context, url) => const Center(
-  //                   child: const CircularProgressIndicator(),
-  //                 ),
-  //                 errorWidget: (context, url, error) => const Icon(Icons.error),
-  //               ),
-  //             ),
-  //           ),
-  //         );
-  //       },
-  //       itemCount: recommendations.length,
-  //     ),
-  //   );
-  // }
 }

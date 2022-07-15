@@ -1,4 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:core/domain/usecases/movie_usecase/remove_watchlist.dart';
 import 'package:core/presentation/bloc/bloc_movie/movie_detail_bloc/movie_detail_bloc.dart';
 import 'package:core/presentation/bloc/bloc_movie/movie_recommendation/movie_recommendations_bloc.dart';
 import 'package:core/presentation/bloc/bloc_movie/movie_watchlist/movie_watchlist_bloc.dart';
@@ -29,15 +30,15 @@ class _MovieDetailPageState extends State<MovieDetailPage> {
           .read<MovieRecomendationBloc>()
           .add(MovieRecommendationLoad(widget.id));
       context
-          .read<WatchlistMoviesBloc>()
-          .add(LoadWatchlistMoviesStatus(widget.id));
+          .read<WatchlistMovieBloc>()
+          .add(LoadMovieWatchlistStatus(widget.id));
     });
   }
 
   @override
   Widget build(BuildContext context) {
     final movieWatchlistStatus =
-        context.select<WatchlistMoviesBloc, bool>((bloc) {
+        context.select<WatchlistMovieBloc, bool>((bloc) {
       if (bloc.state is MovieAddedToWatchlist) {
         return (bloc.state as MovieAddedToWatchlist).isAddedToWatchlist;
       }
@@ -85,7 +86,7 @@ class _DetailContentState extends State<DetailContent> {
     return Stack(
       children: [
         CachedNetworkImage(
-          imageUrl: 'https://image.tmdb.org/t/p/w500${widget.movie.posterPath}',
+          imageUrl: '$BASE_IMAGE_URL${widget.movie.posterPath}',
           width: screenWidth,
           placeholder: (context, url) => const Center(
             child: CircularProgressIndicator(),
@@ -99,8 +100,7 @@ class _DetailContentState extends State<DetailContent> {
               return Container(
                 decoration: const BoxDecoration(
                   color: kRichBlack,
-                  borderRadius: const BorderRadius.vertical(
-                      top: const Radius.circular(16)),
+                  borderRadius: BorderRadius.vertical(top: Radius.circular(16)),
                 ),
                 padding: const EdgeInsets.only(
                   left: 16,
@@ -124,16 +124,14 @@ class _DetailContentState extends State<DetailContent> {
                               onPressed: () async {
                                 if (!widget.isAddedToWatchlist) {
                                   context
-                                      .read<WatchlistMoviesBloc>()
-                                      .add(AddMovieToWatchlist(widget.movie));
+                                      .read<WatchlistMovieBloc>()
+                                      .add(AddToWatchlist(widget.movie));
                                 } else {
-                                  context.read<WatchlistMoviesBloc>().add(
+                                  context.read<WatchlistMovieBloc>().add(
                                       RemoveMovieFromWatchlist(widget.movie));
                                 }
-
                                 final state =
-                                    BlocProvider.of<WatchlistMoviesBloc>(
-                                            context)
+                                    BlocProvider.of<WatchlistMovieBloc>(context)
                                         .state;
                                 String message = '';
                                 if (state is MovieAddedToWatchlist) {

@@ -5,7 +5,7 @@ import 'package:mockito/mockito.dart';
 import 'package:bloc_test/bloc_test.dart';
 import 'package:dartz/dartz.dart';
 import 'package:search/domain/usecase/search_movies.dart';
-import 'package:search/presentation/bloc/movie/movie_search/movie_search_bloc.dart';
+import 'package:search/presentation/bloc/movie/movie_search_bloc/movie_search_bloc.dart';
 import 'search_movie_block_test.mocks.dart';
 
 @GenerateMocks([SearchMovies])
@@ -48,7 +48,7 @@ void main() {
             .thenAnswer((_) async => Right(tMovieList));
         return searchMovieBloc;
       },
-      act: (bloc) => bloc.add(OnQueryMovieChanged(tQuery)),
+      act: (bloc) => bloc.add(OnQueryMoviesChanged(tQuery)),
       wait: const Duration(milliseconds: 750),
       expect: () => [
             MovieSearchLoading(),

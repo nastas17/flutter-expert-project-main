@@ -1,11 +1,9 @@
-import 'package:core/presentation/widgets/tv_card_list.dart';
 import 'package:core/styles/text_styles.dart';
-import 'package:core/utils/state_enum.dart';
 import 'package:core/presentation/widgets/movie_card_list.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:search/presentation/bloc/tv/tv_searh/tv_search_bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../bloc/movie/movie_search_bloc/movie_search_bloc.dart';
 
 class SearchPage extends StatelessWidget {
   static const ROUTE_NAME = '/search';
@@ -23,7 +21,9 @@ class SearchPage extends StatelessWidget {
           children: [
             TextField(
               onSubmitted: (query) {
-                context.read<TvSearchBloc>().add(OnQuerySeriesChanged(query));
+                context
+                    .read<MovieSearchBloc>()
+                    .add(OnQueryMoviesChanged(query));
               },
               decoration: InputDecoration(
                 hintText: 'Search title',
@@ -37,24 +37,25 @@ class SearchPage extends StatelessWidget {
               'Search Result',
               style: kHeading6,
             ),
-            BlocBuilder<TvSearchBloc, TvSearchState>(builder: (context, state) {
-              if (state is TvSearchLoading) {
+            BlocBuilder<MovieSearchBloc, MovieSearchState>(
+                builder: (context, state) {
+              if (state is MovieSearchLoading) {
                 return Center(
                   child: CircularProgressIndicator(),
                 );
-              } else if (state is TvSearchLoaded) {
+              } else if (state is MovieSearchLoaded) {
                 final result = state.result;
                 return Expanded(
                   child: ListView.builder(
                     padding: const EdgeInsets.all(8.0),
                     itemBuilder: (context, index) {
                       final series = result[index];
-                      return TvSeriesCard(series);
+                      return MovieCard(series);
                     },
                     itemCount: result.length,
                   ),
                 );
-              } else if (state is TvSearchError) {
+              } else if (state is MovieSearchError) {
                 return Expanded(
                   child: Center(
                     child: Text(state.message),
