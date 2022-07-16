@@ -36,7 +36,6 @@ import 'package:core/presentation/bloc/bloc_tv/tv_recommendations/tv_recommendat
 import 'package:core/presentation/bloc/bloc_tv/tv_top_rated/tv_top_rated_bloc.dart';
 import 'package:core/presentation/bloc/bloc_tv/tv_watchlist/tv_watchlist_bloc.dart';
 import 'package:core/utils/ssl_pinning.dart';
-import 'package:http/http.dart' as http;
 import 'package:get_it/get_it.dart';
 
 import 'package:core/data/datasources/tv_local_data_source.dart';

@@ -1,8 +1,5 @@
 import 'package:core/data/models/movie_model/genre_model.dart';
 import 'package:core/data/models/movie_model/movie_detail_model.dart';
-import 'package:core/domain/entities/genre.dart';
-import 'package:core/domain/entities/movie_detail.dart';
-import 'package:core/domain/entities/tvseries_detail.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {

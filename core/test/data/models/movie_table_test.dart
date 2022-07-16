@@ -1,6 +1,5 @@
 import 'package:core/data/models/movie_model/movie_table.dart';
 import 'package:flutter_test/flutter_test.dart';
-import '../../dummy_data/dummy_objects.dart';
 
 void main() {
   final testMovieTable = MovieTable(

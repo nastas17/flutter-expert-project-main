@@ -1,6 +1,5 @@
 import 'package:core/data/models/tv_model/tv_table.dart';
 import 'package:flutter_test/flutter_test.dart';
-import '../../dummy_data/dummy_objects.dart';
 
 void main() {
   final testTvTable = TvTable(

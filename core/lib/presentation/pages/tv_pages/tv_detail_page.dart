@@ -5,11 +5,9 @@ import 'package:core/presentation/bloc/bloc_tv/tv_watchlist/tv_watchlist_bloc.da
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../core.dart';
 import 'package:core/domain/entities/genre.dart';
-import 'package:core/domain/entities/tv_series.dart';
 import 'package:core/domain/entities/tvseries_detail.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:provider/provider.dart';
 
 class TvDetailPage extends StatefulWidget {
   static const ROUTE_NAME = '/detail-tv';
@@ -245,7 +243,7 @@ class _DetailContentState extends State<DetailContent> {
                                                         )
                                                       : CachedNetworkImage(
                                                           imageUrl:
-                                                              '$BASE_IMAGE_URL${widget.tv.posterPath}',
+                                                              '$BASE_IMAGE_URL${season.posterPath}',
                                                           placeholder:
                                                               (context, url) =>
                                                                   const Center(
@@ -267,13 +265,15 @@ class _DetailContentState extends State<DetailContent> {
                                 ],
                               ),
                             const SizedBox(height: 16),
-                            const SizedBox(height: 20),
                             Text(
                               'Overview',
                               style: kHeading6,
                             ),
                             Text(
                               widget.tv.overview,
+                            ),
+                            SizedBox(
+                              height: 16,
                             ),
                             Text(
                               'Recommendations',
@@ -311,7 +311,7 @@ class _DetailContentState extends State<DetailContent> {
                                               ),
                                               child: CachedNetworkImage(
                                                 imageUrl:
-                                                    'https://image.tmdb.org/t/p/w500${widget.tv.posterPath}',
+                                                    'https://image.tmdb.org/t/p/w500${series.posterPath}',
                                                 placeholder: (context, url) =>
                                                     Center(
                                                   child:
